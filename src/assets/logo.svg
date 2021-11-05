@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="288px" height="28px" viewBox="0 0 288 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>SOXPROX Meetings</title>
+    <g id="Splash" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" font-family="HelveticaNeue-Bold, Helvetica Neue" font-size="30" font-weight="bold">
+        <g id="Desktop" transform="translate(-8.000000, -14.000000)">
+            <g id="Group" transform="translate(8.000000, 7.000000)">
+                <text id="Meetings" fill="#FFFFFF">
+                    <tspan x="156.91" y="29">Meetings</tspan>
+                </text>
+                <g fill="#F2B007" id="SOXPROX">
+                    <text>
+                        <tspan x="0.08" y="29">SOXPROX</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

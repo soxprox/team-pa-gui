@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="17px" height="15px" viewBox="0 0 17 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Star</title>
+    <g id="Splash" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop" transform="translate(-711.000000, -384.000000)" fill="#F2B007" stroke="#979797">
+            <g id="Feature" transform="translate(711.000000, 381.000000)">
+                <path d="M8.5,4.07665807 L10.6749708,8.22439652 L15.4615993,8.87902037 L12.0006133,12.0541993 L12.8258352,16.5825878 L8.5,14.4421396 L4.17416481,16.5825878 L4.9993867,12.0541993 L1.53840069,8.87902037 L6.32502924,8.22439652 L8.5,4.07665807 Z" id="Star"></path>
+            </g>
+        </g>
+    </g>
+</svg>
