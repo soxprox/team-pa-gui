@@ -5,8 +5,7 @@
         <q-toolbar-title>
           <q-img src="../assets/logo.png" width="180px"/>
         </q-toolbar-title>
-
-        <div></div>
+        <AuthenticatedMenu />
       </q-toolbar>
     </q-header>
     <q-page-container>
@@ -18,13 +17,14 @@
 <script>
 
 import { defineComponent, ref } from 'vue'
-
+import AuthenticatedMenu from '../components/user/AuthenticatedMenu.vue'
 export default defineComponent({
   name: 'MainLayout',
-
+  components: {
+    AuthenticatedMenu
+  },
   setup () {
     const leftDrawerOpen = ref(false)
-
     return {
       leftDrawerOpen,
       toggleLeftDrawer () {
