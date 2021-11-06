@@ -7,7 +7,11 @@
         </q-toolbar-title>
         <AuthenticatedMenu />
       </q-toolbar>
+      <q-toolbar inset>
+        <Breadcrumbs :crumbs="[{label: 'User', icon: 'person' }, {label: 'Settings', icon: 'settings'}]" />
+      </q-toolbar>
     </q-header>
+
     <q-page-container>
       <router-view />
     </q-page-container>
@@ -18,10 +22,12 @@
 
 import { defineComponent, ref } from 'vue'
 import AuthenticatedMenu from '../components/user/AuthenticatedMenu.vue'
+import Breadcrumbs from '../components/site/Breadcrumbs.vue'
 export default defineComponent({
   name: 'MainLayout',
   components: {
-    AuthenticatedMenu
+    AuthenticatedMenu,
+    Breadcrumbs
   },
   setup () {
     const leftDrawerOpen = ref(false)

@@ -15,10 +15,22 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 import MeetingList from '../components/meetings/MeetingList.vue'
 export default {
   components: {
     MeetingList
+  },
+  methods: {
+    ...mapActions('site',['setBreadCrumbs'])
+  },
+  mounted: function () {
+    this.setBreadCrumbs([
+      {
+        label: 'Dashboard',
+        icon: 'dashboard',
+      }
+    ])
   }
 }
 </script>

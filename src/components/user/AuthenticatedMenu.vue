@@ -11,8 +11,8 @@
       <div class="row no-wrap q-pa-md">
         <div class="column">
           <div class="text-h6 q-mb-md">Settings</div>
-          <q-toggle v-model="mobileData" label="Use Mobile Data" />
-          <q-toggle v-model="bluetooth" label="Bluetooth" />
+          <q-btn color="primary" dense icon="person" label="Profile" @click="$router.push('/user/profile')" />
+
         </div>
 
         <q-separator vertical inset class="q-mx-lg" />
@@ -22,7 +22,7 @@
             <img src="https://cdn.quasar.dev/img/boy-avatar.png">
           </q-avatar>
 
-          <div class="text-subtitle1 q-mt-md q-mb-xs">John Doe</div>
+          <div class="text-subtitle1 q-mt-md q-mb-xs">{{keycloak.tokenParsed.email}}</div>
 
           <q-btn
             color="primary"
