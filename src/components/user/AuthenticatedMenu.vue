@@ -40,6 +40,7 @@
 
 <script>
 import { mapState } from 'vuex';
+import { api } from 'boot/axios'
 export default {
   data() {
     return {
@@ -53,6 +54,9 @@ export default {
     setDarkMode() {
       this.$q.dark.toggle();
       this.darkmode = this.$q.dark.isActive;
+      api.put("/user-settings/dark-mode/23193c4c-cc8d-4cac-89ff-affcf57c434a", {
+        darkMode: this.$q.dark.isActive
+      });
     },
   },
 }

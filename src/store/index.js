@@ -2,6 +2,7 @@ import { store } from 'quasar/wrappers'
 import { createStore } from 'vuex'
 import keycloak from './user/keycloak'
 import site from './site/site.js'
+import user from './user/user.js'
 
 // import example from './module-example'
 
@@ -18,7 +19,8 @@ export default store(function (/* { ssrContext } */) {
   const Store = createStore({
     modules: {
       keycloak,
-      site
+      site,
+      user
     },
 
     // enable strict mode (adds overhead!)
