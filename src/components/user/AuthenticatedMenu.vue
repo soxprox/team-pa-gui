@@ -11,7 +11,7 @@
       <div class="row no-wrap q-pa-md">
         <div class="column">
           <div class="text-h6 q-mb-md">Settings</div>
-          <q-btn color="primary" dense icon="person" label="Profile" @click="$router.push('/user/profile')" />
+          <q-btn color="primary" dense icon="person" label="Profile" @click="keycloak.accountManagement()" />
 
         </div>
 

@@ -11,8 +11,7 @@
         <Breadcrumbs :crumbs="[{label: 'User', icon: 'person' }, {label: 'Settings', icon: 'settings'}]" />
       </q-toolbar>
     </q-header>
-
-    <q-page-container>
+    <q-page-container class="w-screen">
       <router-view />
     </q-page-container>
   </q-layout>
