@@ -39,3 +39,9 @@ export default defineComponent({
   }
 })
 </script>
+
+<style>
+  body.body--dark {
+    background-color: #1e1e1e;
+  }
+</style>

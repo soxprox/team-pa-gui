@@ -1,8 +1,6 @@
 <template>
-  <div>
-    <q-card-section>
+
       <q-table
-        class="sticky-cols"
         title="Meetings"
         :rows="data"
         :columns="columns"
@@ -13,22 +11,10 @@
         :rows-per-page-options="[0]"
         :filter="filter"
       >
-      <template v-slot:top>
-        <div class="flex w-full justify-between">
-          <div class="col-1/2">Meetings</div>
-          <div class="col-1/2 mr-4">
-            <q-input label="Search" dense debounce="300" color="primary" v-model="filter">
-              <template v-slot:append>
-                <q-icon name="search" />
-              </template>
-            </q-input>
-          </div>
-        </div>
-      </template>
+
 
       </q-table>
-    </q-card-section>
-  </div>
+
 </template>
 
 <script>

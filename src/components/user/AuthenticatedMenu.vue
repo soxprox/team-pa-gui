@@ -11,8 +11,8 @@
       <div class="row no-wrap q-pa-md">
         <div class="column">
           <div class="text-h6 q-mb-md">Settings</div>
-          <q-btn color="primary" dense icon="person" label="Profile" @click="keycloak.accountManagement()" />
-
+          <q-btn color="primary" dense icon="settings" label="Settings" @click="$router.push('user/settings')" />
+          <q-toggle v-model="darkmode" label="Darkmode" @click="setDarkMode" />
         </div>
 
         <q-separator vertical inset class="q-mx-lg" />
@@ -41,9 +41,20 @@
 <script>
 import { mapState } from 'vuex';
 export default {
+  data() {
+    return {
+      darkmode: this.$q.dark.isActive,
+    };
+  },
   computed: {
     ...mapState('keycloak', ['keycloak'])
-  }
+  },
+  methods: {
+    setDarkMode() {
+      this.$q.dark.toggle();
+      this.darkmode = this.$q.dark.isActive;
+    },
+  },
 }
 </script>
 

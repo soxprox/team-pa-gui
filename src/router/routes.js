@@ -25,7 +25,7 @@ const routes = [
       requiresAuth: true,
     },
     children: [
-      { path: "/user/profile", component: () => import("pages/user/ProfilePage.vue") },
+      { path: "/user/settings", component: () => import("pages/user/ProfilePage.vue") },
     ],
   },
   // Always leave this as last one,
