@@ -7,19 +7,31 @@ export default {
   mutations: {
     setKeycloak(state, keycloak) {
       state.keycloak = keycloak;
-
-      api.interceptors.request.use((config) => {
-        console.log(config)
-        config.headers.common['Authorization'] = `Bearer ${keycloak.token}`;
-        return config;
-      });
+      try {
+        api.interceptors.request.use((config) => {
+          config.headers.common['Authorization'] = `Bearer ${keycloak.token}`;
+          return config;
+        });
+        api.interceptors.response.use((config) => {
+          if (config.status === 401) {
+            keycloak.logout();
+            state.keycloak = { authenticated: false };
+          }
+          return config;
+        })
+      } catch (e) {
+        console.log("interceptor error", e);
+      }
     }
   },
   actions: {
-    setKeycloak({ commit, state }, keycloak) {
+    setKeycloak({ commit, state, dispatch }, keycloak) {
       commit('setKeycloak', keycloak);
+      dispatch('user/loadUser', {}, { root: true });
       setInterval(() => {
-        keycloak.updateToken(70).then(() => {})
+        keycloak.updateToken(70).then(() => { }).catch(err => {
+          commit('setKeycloak', { authenticated: false });
+        })
       }, 6000)
     }
   },

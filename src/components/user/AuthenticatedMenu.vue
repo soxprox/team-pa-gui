@@ -12,7 +12,7 @@
         <div class="column">
           <div class="text-h6 q-mb-md">Settings</div>
           <q-btn color="primary" dense icon="settings" label="Settings" @click="$router.push('user/settings')" />
-          <q-toggle v-model="darkmode" label="Darkmode" @click="setDarkMode" />
+          <q-toggle v-model="darkMode" label="Darkmode" @click="setDarkMode" />
         </div>
 
         <q-separator vertical inset class="q-mx-lg" />
@@ -44,17 +44,24 @@ import { api } from 'boot/axios'
 export default {
   data() {
     return {
-      darkmode: this.$q.dark.isActive,
+      darkMode: this.$q.dark.isActive,
     };
   },
   computed: {
-    ...mapState('keycloak', ['keycloak'])
+    ...mapState('keycloak', ['keycloak']),
+    ...mapState('user', ['settings'])
+  },
+  watch: {
+    settings(newValue) {
+      this.darkMode = newValue.preferences.darkMode;
+    }
   },
   methods: {
     setDarkMode() {
       this.$q.dark.toggle();
       this.darkmode = this.$q.dark.isActive;
-      api.put("/user-settings/dark-mode/23193c4c-cc8d-4cac-89ff-affcf57c434a", {
+      console.log(this.$q.dark.isActive)
+      api.put("/user/settings/dark-mode/23193c4c-cc8d-4cac-89ff-affcf57c434a", {
         darkMode: this.$q.dark.isActive
       });
     },
